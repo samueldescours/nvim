@@ -12,6 +12,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': 'v0.2.0' }
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -36,9 +39,16 @@ cmap <Insert> >
 nmap <End> <
 nmap <Insert> >
 
-let g:everforest_backgroud='soft'
-set background=light
-colorscheme everforest
+let mapleader = " "
+
+nmap <leader>ff <cmd>Telescope find_files<CR>
+nmap <leader>fb <cmd>Telescope buffers<CR>
+nmap <leader>ht <cmd>sp<CR><C-w><Down><cmd>terminal<CR>a
+nmap <leader>vt <cmd>vs<CR><C-w><Right><cmd>terminal<CR>a
+
+let g:gruvbox_contrast_dark="soft"
+set background=dark
+colorscheme gruvbox
 
 runtime! ftplugin/man.vim
 
@@ -151,3 +161,17 @@ function! Epi_header()
 endfunction
 
 command! Header call Epi_header()
+
+command! GPL2H call append(0, [
+\ '/*',
+\ ' * Copyright (C) ' . strftime("%Y") . ' Samuel DESCOURS',
+\ ' *',
+\ ' * This program is free software; you can redistribute it and/or modify',
+\ ' * it under the terms of the GNU General Public License as published by',
+\ ' * the Free Software Foundation; either version 2 of the License, or',
+\ ' * (at your option) any later version.',
+\ ' *',
+\ ' * This file is part of: https://github.com/samueldescours/voxen',
+\ ' */',
+\ ''
+\ ])
