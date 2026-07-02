@@ -12,6 +12,9 @@ vim.lsp.enable("zls")
 vim.lsp.enable("html_lsp")
 vim.lsp.enable("css_lsp")
 vim.lsp.enable("emmet_ls")
+vim.lsp.enable("cobol_ls")
+vim.lsp.enable("tsserver")
+vim.lsp.enable("ols")
 
 vim.lsp.config("clangd", {
     capabilities = capabilities,
@@ -31,9 +34,9 @@ vim.lsp.config("glslls", {
 vim.lsp.config("zls", {
     capabilities = capabilities,
 })
--- vim.lsp.config("asm_lsp", {
---     capabilities = capabilities,
--- })
+vim.lsp.config("asm_lsp", {
+    capabilities = capabilities,
+})
 vim.lsp.config("html_lsp", {
     capabilities = capabilities,
 })
@@ -43,6 +46,23 @@ vim.lsp.config("css_lsp", {
 vim.lsp.config("emmet_ls", {
     capabilities = capabilities,
 })
+vim.lsp.config("cobol_ls", {
+    capabilities = capabilities,
+})
+vim.lsp.config("tsserver", {
+    capabilities = capabilities,
+})
+vim.lsp.config("ols", {
+    capabilities = capabilities,
+})
+
+vim.lsp.opts = {
+	servers = {
+		clangd = {
+			mason = false,
+		},
+	},
+}
 
 cmp.setup ({
 --    completion = {

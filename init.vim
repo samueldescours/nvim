@@ -23,6 +23,7 @@ execute 'luafile ' . expand("<sfile>:p:h") . "/lsp.lua"
 :set number
 :set rnu
 :set colorcolumn=80
+:set mouse=
 
 inoremap { {<Cr>}<Esc>ko
 inoremap ( ()<Esc>i
@@ -46,8 +47,8 @@ nmap <leader>fb <cmd>Telescope buffers<CR>
 nmap <leader>ht <cmd>sp<CR><C-w><Down><cmd>terminal<CR>a
 nmap <leader>vt <cmd>vs<CR><C-w><Right><cmd>terminal<CR>a
 
-let g:gruvbox_contrast_dark="soft"
-set background=dark
+let g:gruvbox_contrast_light="soft"
+set background=light
 colorscheme gruvbox
 
 runtime! ftplugin/man.vim
@@ -171,7 +172,7 @@ command! GPL2H call append(0, [
 \ ' * the Free Software Foundation; either version 2 of the License, or',
 \ ' * (at your option) any later version.',
 \ ' *',
-\ ' * This file is part of: https://github.com/samueldescours/voxen',
+\ ' * This file is part of: https://github.com/samueldescours/dmml',
 \ ' */',
 \ ''
 \ ])
